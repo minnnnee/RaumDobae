@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #070f24;
+  --color-navy-900: #0b1733;
+  --color-navy-800: #13234a;
+  --color-navy-700: #1d3163;
+  --color-leaf-50: #f1f8ec;
+  --color-leaf-100: #e1f0d8;
+  --color-leaf-300: #9fd67f;
+  --color-leaf-400: #6cc04a;
+  --color-leaf-500: #2e9e3a;
+  --color-leaf-600: #1f8030;
+  --color-leaf-700: #0e5e2e;
+  --color-cream: #f7f5ef;
+  --color-gold: #c8b27a;
+
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-serif: var(--font-noto-serif), "Nanum Myeongjo", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-navy-900);
+  font-family: var(--font-sans);
+  word-break: keep-all;
+}
+
+/* 스크롤 등장 애니메이션 */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
