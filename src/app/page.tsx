@@ -220,7 +220,10 @@ export default function Home() {
               {worries.map((w, i) => (
                 <Reveal key={w.q} delay={i * 100} className="h-full">
                   <div className="glass-card h-full rounded-2xl p-6 md:p-7">
-                    <p className="font-bold text-white/45 line-through decoration-white/25">{w.q}</p>
+                    <p className="flex items-center gap-2 font-bold text-white/60">
+                      <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
+                      {w.q}
+                    </p>
                     <p className="mt-3 flex gap-2.5 leading-relaxed text-gold-light">
                       <CheckIcon className="mt-1 h-4 w-4 shrink-0 text-leaf-400" />
                       {w.a}

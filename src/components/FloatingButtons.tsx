@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { site } from "@/lib/site";
-import { ArrowUpIcon, InstagramIcon, KakaoIcon, NaverBlogIcon } from "./icons";
+import { ArrowUpIcon, KakaoIcon, NaverBlogIcon } from "./icons";
 
 type Item = {
   label: string;
@@ -29,12 +29,6 @@ const items: Item[] = [
     href: site.links.kakaoChannel,
     className: "bg-[#FEE500] text-[#3A1D1D]",
     icon: <span className="text-[15px] font-black leading-none tracking-tighter">Ch</span>,
-  },
-  {
-    label: "인스타그램",
-    href: site.links.instagram,
-    className: "bg-[linear-gradient(45deg,#feda75,#fa7e1e_30%,#d62976_60%,#962fbf_85%,#4f5bd5)] text-white",
-    icon: <InstagramIcon className="h-5 w-5" />,
   },
 ];
 

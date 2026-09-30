@@ -18,8 +18,6 @@ export const site = {
     // TODO: 실제 카카오톡 채널 링크로 교체 (예: https://pf.kakao.com/_xxxxx)
     kakaoChannel: "https://pf.kakao.com/",
     blog: "https://blog.naver.com/raum-dobae-kr",
-    // TODO: 실제 인스타그램 계정 링크로 교체
-    instagram: "https://www.instagram.com/",
   },
 } as const;
 
