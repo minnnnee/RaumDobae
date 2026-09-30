@@ -164,7 +164,7 @@ export default function Home() {
 
             <Reveal delay={240}>
               <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
-                라움은 독일어로 &lsquo;공간&rsquo;이라는 뜻입니다.
+                라움(Raum)은 독일어로 &lsquo;공간&rsquo;이라는 뜻입니다.
                 <br />
                 <strong className="font-semibold text-white">{site.slogan}.</strong>
               </p>
