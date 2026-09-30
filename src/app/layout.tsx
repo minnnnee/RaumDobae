@@ -10,6 +10,7 @@ const notoSerif = Noto_Serif_KR({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: `${site.name} | ${site.slogan}`,
   description:
     "광교·수원·용인 아파트, 오피스텔, 상가 도배 전문 라움도배. 무료 현장 방문 견적, 친환경 자재, 깔끔한 마감으로 보답합니다.",

@@ -2,6 +2,8 @@
 export const site = {
   name: "라움도배",
   nameEn: "RAUM DOBAE",
+  // 도메인을 연결하면 이 주소만 바꾸면 됩니다.
+  url: "https://raum-dobae.vercel.app",
   slogan: "깔끔한 마감에 집중합니다",
   ceo: "김지현",
   phone: "010-6862-1116",
