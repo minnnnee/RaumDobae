@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
-        solid ? "bg-navy-900/95 shadow-lg shadow-navy-950/30 backdrop-blur" : "bg-transparent"
+        solid ? "border-b border-white/5 bg-forest-950/80 shadow-lg shadow-black/30 backdrop-blur-md" : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:h-18">
@@ -41,7 +41,7 @@ export default function Header() {
 
         <nav className="hidden items-center gap-8 lg:flex">
           {nav.map((item) => (
-            <a key={item.href} href={item.href} className="text-sm font-medium text-white/75 transition-colors hover:text-leaf-300">
+            <a key={item.href} href={item.href} className="text-sm font-medium text-white/75 transition-colors hover:text-gold-light">
               {item.label}
             </a>
           ))}
@@ -56,7 +56,7 @@ export default function Header() {
             href={site.links.kakaoChat}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 flex items-center gap-1.5 rounded-full bg-leaf-500 px-4 py-2 text-sm font-bold text-white shadow-md shadow-leaf-700/30 transition-colors hover:bg-leaf-600"
+            className="ml-2 flex items-center gap-1.5 rounded-full bg-gradient-to-r from-leaf-600 to-leaf-500 px-4 py-2 text-sm font-bold text-white shadow-md shadow-leaf-700/30 transition-all hover:brightness-110"
           >
             <KakaoIcon className="h-4 w-4" />
             <span className="hidden sm:inline">무료 견적받기</span>

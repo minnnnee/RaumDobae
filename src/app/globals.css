@@ -1,22 +1,49 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-950: #070f24;
-  --color-navy-900: #0b1733;
-  --color-navy-800: #13234a;
-  --color-navy-700: #1d3163;
-  --color-leaf-50: #f1f8ec;
-  --color-leaf-100: #e1f0d8;
-  --color-leaf-300: #9fd67f;
+  /* 깊은 숲색 — 어두운 배경 */
+  --color-forest-950: #050e09;
+  --color-forest-900: #08170f;
+  --color-forest-800: #0e2418;
+  --color-forest-700: #163321;
+  /* 브랜드 초록 */
+  --color-leaf-50: #f0f6ee;
+  --color-leaf-100: #deecd9;
+  --color-leaf-300: #9ccf8a;
   --color-leaf-400: #6cc04a;
   --color-leaf-500: #2e9e3a;
   --color-leaf-600: #1f8030;
   --color-leaf-700: #0e5e2e;
-  --color-cream: #f7f5ef;
-  --color-gold: #c8b27a;
+  /* 고급스러운 포인트 */
+  --color-ivory: #f6f4ec;
+  --color-sand: #e7dfc9;
+  --color-gold: #c9b37e;
+  --color-gold-light: #e9dcb5;
+  --color-ink: #13201a;
+  --color-muted: #6b776f;
 
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
   --font-serif: var(--font-noto-serif), "Nanum Myeongjo", serif;
+
+  --animate-light-sweep: light-sweep 9s ease-in-out infinite;
+  --animate-dust: dust 8s ease-in-out infinite;
+  --animate-glow: glow 10s ease-in-out infinite;
+
+  @keyframes light-sweep {
+    0% { transform: translateX(-30vw) skewX(-12deg); opacity: 0; }
+    15% { opacity: 1; }
+    60% { opacity: 1; }
+    100% { transform: translateX(130vw) skewX(-12deg); opacity: 0; }
+  }
+  @keyframes dust {
+    0% { transform: translateY(0); opacity: 0; }
+    20% { opacity: 0.9; }
+    100% { transform: translateY(-160px); opacity: 0; }
+  }
+  @keyframes glow {
+    0%, 100% { opacity: 0.75; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.08); }
+  }
 }
 
 html {
@@ -25,10 +52,25 @@ html {
 }
 
 body {
-  background: var(--color-cream);
-  color: var(--color-navy-900);
+  background: var(--color-ivory);
+  color: var(--color-ink);
   font-family: var(--font-sans);
   word-break: keep-all;
+}
+
+/* 초록 → 연두 → 샴페인 골드 그라데이션 글자 */
+.text-gradient {
+  background: linear-gradient(120deg, #3fb553 0%, #9ccf8a 45%, #e9dcb5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 어두운 배경 위 유리 카드 */
+.glass-card {
+  background: linear-gradient(135deg, rgba(108, 192, 74, 0.07), rgba(201, 179, 126, 0.05));
+  border: 1px solid rgba(201, 179, 126, 0.2);
+  box-shadow: inset 0 1px 0 rgba(233, 220, 181, 0.1);
 }
 
 /* 스크롤 등장 애니메이션 */
@@ -45,4 +87,5 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
+  .animate-light-sweep, .animate-dust, .animate-glow, .animate-bounce, .animate-pulse { animation: none; }
 }
