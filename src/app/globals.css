@@ -6,14 +6,17 @@
   --color-forest-900: #08170f;
   --color-forest-800: #0e2418;
   --color-forest-700: #163321;
-  /* 브랜드 초록 */
-  --color-leaf-50: #f0f6ee;
-  --color-leaf-100: #deecd9;
-  --color-leaf-300: #9ccf8a;
-  --color-leaf-400: #6cc04a;
-  --color-leaf-500: #2e9e3a;
-  --color-leaf-600: #1f8030;
-  --color-leaf-700: #0e5e2e;
+  /* 메인 컬러 — 진곤색 */
+  --color-navy: #1e2f5a;
+  --color-navy-dark: #172649;
+  /* 브랜드 초록 — 기존보다 20~30% 진하게 */
+  --color-leaf-50: #e8f0ea;
+  --color-leaf-100: #d0e2d5;
+  --color-leaf-300: #7bb58a;
+  --color-leaf-400: #4f9e5f;
+  --color-leaf-500: #1a7a3c;
+  --color-leaf-600: #0f6b3a; /* 포인트 컬러 */
+  --color-leaf-700: #145a32; /* 서브 컬러 */
   /* 고급스러운 포인트 */
   --color-ivory: #f6f4ec;
   --color-sand: #e7dfc9;

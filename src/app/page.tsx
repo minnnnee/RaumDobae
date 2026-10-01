@@ -233,10 +233,9 @@ export default function Home() {
               ))}
             </div>
             <Reveal className="mt-10">
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-leaf-700 via-leaf-600 to-[#6f8f4e] p-8 text-center md:p-10">
-                <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-gold-light/15 blur-2xl" />
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-leaf-700 to-leaf-600 p-8 shadow-xl shadow-black/30 text-center md:p-10">
                 <p className="relative font-serif text-xl font-bold md:text-2xl">이 모든 걱정, 라움도배에는 없습니다</p>
-                <p className="relative mt-2 text-sm text-white/75">대표가 직접 상담부터 마감까지 함께합니다</p>
+                <p className="relative mt-2 text-sm text-white/85">대표가 직접 상담부터 마감까지 함께합니다</p>
                 <a
                   href={site.links.kakaoChat}
                   target="_blank"

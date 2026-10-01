@@ -27,36 +27,36 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
-        solid ? "border-b border-white/5 bg-forest-950/80 shadow-lg shadow-black/30 backdrop-blur-md" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-navy transition-shadow duration-300 ${
+        solid ? "shadow-lg shadow-navy-dark/40" : ""
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:h-18">
         <a href="#top" className="flex items-center gap-2 text-white" onClick={() => setOpen(false)}>
           <LogoMark className="h-7 w-10" />
           <span className="text-lg font-black tracking-tight">
-            <span className="text-leaf-400">라움</span>도배
+            라움도배
           </span>
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
           {nav.map((item) => (
-            <a key={item.href} href={item.href} className="text-sm font-medium text-white/75 transition-colors hover:text-gold-light">
+            <a key={item.href} href={item.href} className="text-sm font-medium text-white transition-opacity hover:opacity-70">
               {item.label}
             </a>
           ))}
         </nav>
 
         <div className="flex items-center gap-2">
-          <a href={telHref} className="hidden items-center gap-1.5 text-sm font-semibold text-white/85 hover:text-white sm:flex">
-            <PhoneIcon className="h-4 w-4 text-leaf-400" />
+          <a href={telHref} className="hidden items-center gap-1.5 text-sm font-semibold text-white hover:opacity-70 sm:flex">
+            <PhoneIcon className="h-4 w-4" />
             {site.phone}
           </a>
           <a
             href={site.links.kakaoChat}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 flex items-center gap-1.5 rounded-full bg-gradient-to-r from-leaf-600 to-leaf-500 px-4 py-2 text-sm font-bold text-white shadow-md shadow-leaf-700/30 transition-all hover:brightness-110"
+            className="ml-2 flex items-center gap-1.5 rounded-full bg-leaf-600 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-leaf-700"
           >
             <KakaoIcon className="h-4 w-4" />
             <span className="hidden sm:inline">무료 견적받기</span>
