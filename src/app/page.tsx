@@ -133,8 +133,8 @@ export default function Home() {
 
       <main>
         {/* HERO */}
-        <section id="top" className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-forest-950 pt-16 text-white">
-          <div className="animate-glow pointer-events-none absolute right-0 top-0 h-[900px] w-[900px] translate-x-[20%] -translate-y-[25%] rounded-full bg-[radial-gradient(circle,rgba(46,158,58,0.45)_0%,rgba(46,158,58,0.12)_45%,transparent_70%)]" />
+        <section id="top" className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-navy pt-16 text-white">
+          <div className="animate-glow pointer-events-none absolute right-0 top-0 h-[900px] w-[900px] translate-x-[20%] -translate-y-[25%] rounded-full bg-[radial-gradient(circle,rgba(15,107,58,0.45)_0%,rgba(15,107,58,0.12)_45%,transparent_70%)]" />
           <div className="pointer-events-none absolute bottom-0 left-0 h-[640px] w-[640px] -translate-x-[30%] translate-y-[30%] rounded-full bg-[radial-gradient(circle,rgba(201,179,126,0.2)_0%,transparent_60%)]" />
           <div className="animate-light-sweep pointer-events-none absolute inset-y-0 left-0 w-60 bg-gradient-to-r from-transparent via-[rgba(233,220,181,0.14)] to-transparent" />
           {dust.map((d) => (
@@ -202,7 +202,7 @@ export default function Home() {
         <ScrollShowcase />
 
         {/* WORRIES */}
-        <section className="bg-forest-900 px-5 py-24 text-white md:py-32">
+        <section className="bg-navy-dark px-5 py-24 text-white md:py-32">
           <div className="mx-auto max-w-4xl">
             <SectionTitle
               dark
@@ -294,7 +294,7 @@ export default function Home() {
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {services.map((s, i) => (
                 <Reveal key={s.title} delay={i * 100} className="h-full">
-                  <div className="group relative h-full overflow-hidden rounded-2xl bg-ivory p-7 ring-1 ring-sand transition-all hover:-translate-y-1 hover:bg-forest-900 hover:shadow-xl">
+                  <div className="group relative h-full overflow-hidden rounded-2xl bg-ivory p-7 ring-1 ring-sand transition-all hover:-translate-y-1 hover:bg-navy-dark hover:shadow-xl">
                     <p className="text-[11px] font-bold tracking-[0.25em] text-gold">{s.tag}</p>
                     <h3 className="mt-4 text-xl font-bold transition-colors group-hover:text-white">{s.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted transition-colors group-hover:text-white/60">{s.desc}</p>
@@ -316,8 +316,8 @@ export default function Home() {
         </section>
 
         {/* PROCESS */}
-        <section id="process" className="relative overflow-hidden bg-forest-900 px-5 py-24 text-white md:py-32">
-          <div className="pointer-events-none absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(46,158,58,0.25)_0%,transparent_65%)]" />
+        <section id="process" className="relative overflow-hidden bg-navy-dark px-5 py-24 text-white md:py-32">
+          <div className="pointer-events-none absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(15,107,58,0.25)_0%,transparent_65%)]" />
           <div className="relative mx-auto max-w-6xl">
             <SectionTitle dark eyebrow="PROCESS" title="진행 과정" />
             <ol className="relative grid gap-8 md:grid-cols-5 md:gap-4">
@@ -325,7 +325,7 @@ export default function Home() {
               {steps.map((s, i) => (
                 <li key={s.title} className="relative">
                   <Reveal delay={i * 100} className="flex items-start gap-5 md:flex-col md:items-center md:text-center">
-                    <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-gold/50 bg-forest-800 font-serif text-lg font-bold text-gold-light ring-4 ring-forest-900">
+                    <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-gold/50 bg-navy-700 font-serif text-lg font-bold text-gold-light ring-4 ring-navy-dark">
                       {i + 1}
                     </span>
                     <div>
@@ -357,7 +357,7 @@ export default function Home() {
                 href={site.links.blog}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-forest-900 px-7 py-4 font-bold text-white transition-colors hover:bg-leaf-700"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-navy-dark px-7 py-4 font-bold text-white transition-colors hover:bg-leaf-700"
               >
                 네이버 블로그 바로가기
                 <ArrowRightIcon className="h-4 w-4" />
@@ -384,8 +384,8 @@ export default function Home() {
         </section>
 
         {/* CONTACT CTA */}
-        <section id="contact" className="relative overflow-hidden bg-forest-950 px-5 py-24 text-white md:py-32">
-          <div className="animate-glow pointer-events-none absolute left-1/2 top-0 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(46,158,58,0.35)_0%,transparent_65%)]" />
+        <section id="contact" className="relative overflow-hidden bg-navy px-5 py-24 text-white md:py-32">
+          <div className="animate-glow pointer-events-none absolute left-1/2 top-0 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(15,107,58,0.35)_0%,transparent_65%)]" />
           <div className="relative mx-auto max-w-3xl text-center">
             <Reveal>
               <LogoMark className="mx-auto h-12 w-[4.5rem] text-white" />
@@ -422,7 +422,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-black px-5 pb-28 pt-10 text-xs text-white/35 md:pb-10">
+      <footer className="bg-navy-950 px-5 pb-28 pt-10 text-xs text-white/35 md:pb-10">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <p className="flex items-center gap-2 text-base font-black text-white/80">
             <LogoMark className="h-5 w-8" />

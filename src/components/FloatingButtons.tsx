@@ -37,7 +37,7 @@ const base =
 
 function Tooltip({ children }: { children: ReactNode }) {
   return (
-    <span className="pointer-events-none absolute right-full mr-3 hidden whitespace-nowrap rounded-md bg-forest-900 px-2.5 py-1 text-xs font-semibold text-white opacity-0 transition-opacity group-hover:opacity-100 md:block">
+    <span className="pointer-events-none absolute right-full mr-3 hidden whitespace-nowrap rounded-md bg-navy-dark px-2.5 py-1 text-xs font-semibold text-white opacity-0 transition-opacity group-hover:opacity-100 md:block">
       {children}
     </span>
   );
@@ -72,7 +72,7 @@ export default function FloatingButtons() {
         type="button"
         aria-label="맨 위로"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className={`${base} flex-col bg-forest-900 text-gold-light ring-gold/30 transition-all ${
+        className={`${base} flex-col bg-navy-dark text-gold-light ring-gold/30 transition-all ${
           showTop ? "opacity-100" : "pointer-events-none translate-y-3 opacity-0"
         }`}
       >

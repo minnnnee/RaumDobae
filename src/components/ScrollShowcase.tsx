@@ -42,7 +42,7 @@ export default function ScrollShowcase() {
   const stage = reveal < 0.34 ? 0 : reveal < 0.8 ? 1 : 2;
 
   return (
-    <div ref={ref} className="relative h-[320vh] bg-forest-950">
+    <div ref={ref} className="relative h-[320vh] bg-navy">
       <div className="sticky top-0 h-[100svh] overflow-hidden">
         {/* 펼쳐지기 전: 어둡고 흐린 공간 */}
         <Image
