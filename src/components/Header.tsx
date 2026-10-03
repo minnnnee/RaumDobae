@@ -7,8 +7,9 @@ import { KakaoIcon, LogoMark, PhoneIcon } from "./icons";
 const nav = [
   { href: "#why", label: "라움의 약속" },
   { href: "#services", label: "시공 분야" },
+  { href: "#portfolio", label: "시공 사례" },
   { href: "#process", label: "진행 과정" },
-  { href: "#blog", label: "시공 사례" },
+  { href: "#blog", label: "블로그" },
   { href: "#contact", label: "상담 문의" },
 ];
 

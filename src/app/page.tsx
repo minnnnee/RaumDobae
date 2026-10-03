@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import FloatingButtons from "@/components/FloatingButtons";
 import Reveal from "@/components/Reveal";
 import ScrollShowcase from "@/components/ScrollShowcase";
+import PortfolioGallery from "@/components/PortfolioGallery";
+import { getPortfolio, portfolioCategories } from "@/lib/portfolio";
 import { site, telHref } from "@/lib/site";
 import { ArrowRightIcon, CheckIcon, KakaoIcon, LogoMark, PhoneIcon, PinIcon } from "@/components/icons";
 
@@ -127,6 +129,8 @@ function ContactButtons({ dark = true }: { dark?: boolean }) {
 }
 
 export default function Home() {
+  const portfolio = getPortfolio();
+
   return (
     <>
       <Header />
@@ -315,6 +319,20 @@ export default function Home() {
           </div>
         </section>
 
+        {/* PORTFOLIO */}
+        <section id="portfolio" className="bg-ivory px-5 py-24 md:py-32">
+          <div className="mx-auto max-w-6xl">
+            <SectionTitle
+              eyebrow="PORTFOLIO"
+              title="시공 사례"
+              desc="라움도배가 직접 마감한 현장입니다. 사진을 누르면 크게 볼 수 있어요."
+            />
+            <Reveal>
+              <PortfolioGallery photos={portfolio} categories={portfolioCategories.map((c) => c.label)} />
+            </Reveal>
+          </div>
+        </section>
+
         {/* PROCESS */}
         <section id="process" className="relative overflow-hidden bg-navy-dark px-5 py-24 text-white md:py-32">
           <div className="pointer-events-none absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(15,107,58,0.25)_0%,transparent_65%)]" />
@@ -343,9 +361,9 @@ export default function Home() {
         <section id="blog" className="bg-ivory px-5 py-24 md:py-32">
           <div className="mx-auto grid max-w-5xl items-center gap-12 md:grid-cols-2">
             <Reveal className="order-2 md:order-1">
-              <p className="text-xs font-semibold tracking-[0.35em] text-leaf-600">PORTFOLIO</p>
+              <p className="text-xs font-semibold tracking-[0.35em] text-leaf-600">BLOG</p>
               <h2 className="mt-4 font-serif text-3xl font-bold leading-snug md:text-[2.5rem]">
-                시공 사례는
+                더 많은 현장 이야기는
                 <br />
                 블로그에서 확인하세요
               </h2>
