@@ -24,12 +24,6 @@ const items: Item[] = [
     className: "bg-[#03C75A] text-white",
     icon: <NaverBlogIcon className="h-4 w-4" />,
   },
-  {
-    label: "카카오채널",
-    href: site.links.kakaoChannel,
-    className: "bg-[#FEE500] text-[#3A1D1D]",
-    icon: <span className="text-[15px] font-black leading-none tracking-tighter">Ch</span>,
-  },
 ];
 
 const base =
