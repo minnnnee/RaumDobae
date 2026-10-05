@@ -19,14 +19,18 @@ export type PortfolioPhoto = {
 const IMAGE_EXT = /\.(jpe?g|png|webp|avif)$/i;
 const ROOT = path.join(process.cwd(), "public", "portfolio");
 
-/** 파일 이름에서 설명 문구를 만든다. 예: "01_광교 에듀하임 32평.jpg" → "광교 에듀하임 32평" */
+/**
+ * 파일 이름에서 설명 문구를 만든다. 예: "01_광교 에듀하임 32평.jpg" → "광교 에듀하임 32평"
+ * "apt1.jpg"처럼 영문+번호뿐인 이름은 설명 없이 표시한다.
+ */
 function toCaption(file: string) {
-  return file
+  const caption = file
     .normalize("NFC")
     .replace(IMAGE_EXT, "")
     .replace(/^\d+[_\-.\s]+/, "")
     .replace(/[_]+/g, " ")
     .trim();
+  return /^[A-Za-z\-]*\d*$/.test(caption) ? "" : caption;
 }
 
 export function getPortfolio(): PortfolioPhoto[] {

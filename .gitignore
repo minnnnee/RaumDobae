@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 시공 사례 원본 사진 (사이트에는 줄인 사진만 올림)
+/portfolio-originals
