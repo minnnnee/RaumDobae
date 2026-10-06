@@ -56,6 +56,16 @@ export function ArrowRightIcon({ className }: IconProps) {
   );
 }
 
+export function PhotoIcon({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <circle cx="9" cy="10" r="1.5" />
+      <path d="m21 16-5-5-8 8" />
+    </svg>
+  );
+}
+
 /** 명함 속 지붕 + 창문 + 잎사귀 로고 */
 export function LogoMark({ className }: IconProps) {
   return (

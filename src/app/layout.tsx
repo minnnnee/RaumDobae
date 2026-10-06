@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: `${site.name} | ${site.slogan}`,
   description:
-    "광교·수원·용인 아파트, 오피스텔, 상가 도배 전문 라움도배. 무료 현장 방문 견적, 친환경 자재, 깔끔한 마감으로 보답합니다.",
-  keywords: ["도배", "광교도배", "수원도배", "용인도배", "아파트도배", "실크벽지", "합지벽지", "라움도배"],
+    "광교·수원·용인·성남·하남 아파트, 오피스텔, 상가 도배 전문 라움도배. 무료 현장 방문 견적, 친환경 자재, 깔끔한 마감으로 보답합니다.",
+  keywords: ["도배", "광교도배", "수원도배", "용인도배", "성남도배", "하남도배", "아파트도배", "실크벽지", "합지벽지", "라움도배"],
   openGraph: {
     title: `${site.name} | ${site.slogan}`,
     description: "무료 현장 방문 견적 · 친환경 자재 · 꼼꼼한 마감",

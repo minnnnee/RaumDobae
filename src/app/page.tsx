@@ -6,7 +6,7 @@ import ScrollShowcase from "@/components/ScrollShowcase";
 import PortfolioGallery from "@/components/PortfolioGallery";
 import { getPortfolio, portfolioCategories } from "@/lib/portfolio";
 import { site, telHref } from "@/lib/site";
-import { ArrowRightIcon, CheckIcon, KakaoIcon, LogoMark, PhoneIcon, PinIcon } from "@/components/icons";
+import { ArrowRightIcon, CheckIcon, KakaoIcon, LogoMark, PhoneIcon, PhotoIcon, PinIcon } from "@/components/icons";
 
 const highlights = [
   { value: "0원", label: "현장 방문 견적비" },
@@ -94,7 +94,7 @@ function SectionTitle({
 }) {
   return (
     <Reveal className="mb-12 text-center md:mb-16">
-      <p className={`text-xs font-semibold tracking-[0.35em] ${dark ? "text-gold" : "text-leaf-600"}`}>{eyebrow}</p>
+      <p className={`text-xs font-semibold tracking-[0.35em] ${dark ? "text-gold" : "text-leaf-700"}`}>{eyebrow}</p>
       <h2 className={`mt-4 font-serif text-3xl font-bold leading-snug md:text-[2.75rem] ${dark ? "text-white" : "text-ink"}`}>
         {title}
       </h2>
@@ -103,26 +103,28 @@ function SectionTitle({
   );
 }
 
-function ContactButtons({ dark = true }: { dark?: boolean }) {
+/** secondary="portfolio"면 두 번째 버튼이 전화 상담 대신 시공 사례로 이동한다 */
+function ContactButtons({ dark = true, secondary = "phone" }: { dark?: boolean; secondary?: "phone" | "portfolio" }) {
+  const toPortfolio = secondary === "portfolio";
   return (
     <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
       <a
         href={site.links.kakaoChat}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-leaf-600 to-leaf-500 px-8 py-4 font-bold text-white shadow-xl shadow-leaf-700/30 transition-all hover:-translate-y-0.5 hover:shadow-leaf-600/40 sm:w-auto"
+        className="flex w-full items-center justify-center gap-2 rounded-full bg-leaf-700 px-8 py-4 font-bold text-white shadow-xl shadow-leaf-700/30 transition-all hover:-translate-y-0.5 hover:bg-leaf-800 sm:w-auto"
       >
         <KakaoIcon className="h-5 w-5" />
         카카오톡 무료 상담
       </a>
       <a
-        href={telHref}
+        href={toPortfolio ? "#portfolio" : telHref}
         className={`flex w-full items-center justify-center gap-2 rounded-full border px-8 py-4 font-bold transition-all hover:-translate-y-0.5 sm:w-auto ${
-          dark ? "border-white/25 text-white hover:bg-white/10" : "border-leaf-600 text-leaf-700 hover:bg-leaf-600 hover:text-white"
+          dark ? "border-white/25 text-white hover:bg-white/10" : "border-leaf-700 text-leaf-700 hover:bg-leaf-700 hover:text-white"
         }`}
       >
-        <PhoneIcon className="h-4 w-4" />
-        전화 상담
+        {toPortfolio ? <PhotoIcon className="h-4 w-4" /> : <PhoneIcon className="h-4 w-4" />}
+        {toPortfolio ? "시공 사진 보기" : "전화 상담"}
       </a>
     </div>
   );
@@ -138,7 +140,7 @@ export default function Home() {
       <main>
         {/* HERO */}
         <section id="top" className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-navy pt-16 text-white">
-          <div className="animate-glow pointer-events-none absolute right-0 top-0 h-[900px] w-[900px] translate-x-[20%] -translate-y-[25%] rounded-full bg-[radial-gradient(circle,rgba(15,107,58,0.45)_0%,rgba(15,107,58,0.12)_45%,transparent_70%)]" />
+          <div className="animate-glow pointer-events-none absolute right-0 top-0 h-[900px] w-[900px] translate-x-[20%] -translate-y-[25%] rounded-full bg-[radial-gradient(circle,rgba(20,90,50,0.45)_0%,rgba(20,90,50,0.12)_45%,transparent_70%)]" />
           <div className="pointer-events-none absolute bottom-0 left-0 h-[640px] w-[640px] -translate-x-[30%] translate-y-[30%] rounded-full bg-[radial-gradient(circle,rgba(201,179,126,0.2)_0%,transparent_60%)]" />
           <div className="animate-light-sweep pointer-events-none absolute inset-y-0 left-0 w-60 bg-gradient-to-r from-transparent via-[rgba(233,220,181,0.14)] to-transparent" />
           {dust.map((d) => (
@@ -153,7 +155,7 @@ export default function Home() {
             <Reveal>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2 backdrop-blur-sm">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-leaf-400" />
-                <span className="text-sm font-medium tracking-wide text-gold-light">광교 · 수원 · 용인 도배 전문</span>
+                <span className="text-sm font-medium tracking-wide text-gold-light">광교 · 수원 · 용인 · 성남 · 하남 도배 전문</span>
               </div>
             </Reveal>
 
@@ -176,7 +178,7 @@ export default function Home() {
 
             <Reveal delay={360}>
               <div className="mt-10">
-                <ContactButtons />
+                <ContactButtons secondary="portfolio" />
                 <p className="mt-5 text-xs text-white/35">무료 현장 방문 · 무료 견적 · 친환경 자재</p>
               </div>
             </Reveal>
@@ -261,7 +263,7 @@ export default function Home() {
               eyebrow="WHY RAUM"
               title={
                 <>
-                  왜 <span className="text-leaf-600">라움도배</span>일까요?
+                  왜 <span className="text-leaf-700">라움도배</span>일까요?
                 </>
               }
               desc="좋은 도배는 공간을 바꾸고, 공간은 하루를 바꿉니다."
@@ -275,7 +277,7 @@ export default function Home() {
                     <div className="mt-5 space-y-4">
                       {p.points.map((pt) => (
                         <div key={pt.h}>
-                          <p className="text-sm font-bold text-leaf-600">{pt.h}</p>
+                          <p className="text-sm font-bold text-leaf-700">{pt.h}</p>
                           <p className="mt-1 text-sm leading-relaxed text-muted">{pt.p}</p>
                         </div>
                       ))}
@@ -302,7 +304,7 @@ export default function Home() {
                     <p className="text-[11px] font-bold tracking-[0.25em] text-gold">{s.tag}</p>
                     <h3 className="mt-4 text-xl font-bold transition-colors group-hover:text-white">{s.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted transition-colors group-hover:text-white/60">{s.desc}</p>
-                    <span className="absolute inset-x-7 bottom-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-leaf-500 to-gold transition-transform duration-500 group-hover:scale-x-100" />
+                    <span className="absolute inset-x-7 bottom-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-leaf-400 to-gold transition-transform duration-500 group-hover:scale-x-100" />
                   </div>
                 </Reveal>
               ))}
@@ -335,11 +337,11 @@ export default function Home() {
 
         {/* PROCESS */}
         <section id="process" className="relative overflow-hidden bg-navy-dark px-5 py-24 text-white md:py-32">
-          <div className="pointer-events-none absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(15,107,58,0.25)_0%,transparent_65%)]" />
+          <div className="pointer-events-none absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(20,90,50,0.25)_0%,transparent_65%)]" />
           <div className="relative mx-auto max-w-6xl">
             <SectionTitle dark eyebrow="PROCESS" title="진행 과정" />
             <ol className="relative grid gap-8 md:grid-cols-5 md:gap-4">
-              <span className="absolute bottom-6 left-6 top-6 w-px bg-gradient-to-b from-leaf-500 to-gold/40 md:inset-x-[10%] md:bottom-auto md:h-px md:w-auto md:bg-gradient-to-r" />
+              <span className="absolute bottom-6 left-6 top-6 w-px bg-gradient-to-b from-leaf-400 to-gold/40 md:inset-x-[10%] md:bottom-auto md:h-px md:w-auto md:bg-gradient-to-r" />
               {steps.map((s, i) => (
                 <li key={s.title} className="relative">
                   <Reveal delay={i * 100} className="flex items-start gap-5 md:flex-col md:items-center md:text-center">
@@ -361,7 +363,7 @@ export default function Home() {
         <section id="blog" className="bg-ivory px-5 py-24 md:py-32">
           <div className="mx-auto grid max-w-5xl items-center gap-12 md:grid-cols-2">
             <Reveal className="order-2 md:order-1">
-              <p className="text-xs font-semibold tracking-[0.35em] text-leaf-600">BLOG</p>
+              <p className="text-xs font-semibold tracking-[0.35em] text-leaf-700">BLOG</p>
               <h2 className="mt-4 font-serif text-3xl font-bold leading-snug md:text-[2.5rem]">
                 더 많은 현장 이야기는
                 <br />
@@ -375,7 +377,7 @@ export default function Home() {
                 href={site.links.blog}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-navy-dark px-7 py-4 font-bold text-white transition-colors hover:bg-leaf-700"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-navy-dark px-7 py-4 font-bold text-white transition-colors hover:bg-leaf-800"
               >
                 네이버 블로그 바로가기
                 <ArrowRightIcon className="h-4 w-4" />
@@ -403,7 +405,7 @@ export default function Home() {
 
         {/* CONTACT CTA */}
         <section id="contact" className="relative overflow-hidden bg-navy px-5 py-24 text-white md:py-32">
-          <div className="animate-glow pointer-events-none absolute left-1/2 top-0 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(15,107,58,0.35)_0%,transparent_65%)]" />
+          <div className="animate-glow pointer-events-none absolute left-1/2 top-0 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(20,90,50,0.35)_0%,transparent_65%)]" />
           <div className="relative mx-auto max-w-3xl text-center">
             <Reveal>
               <LogoMark className="mx-auto h-12 w-[4.5rem] text-white" />

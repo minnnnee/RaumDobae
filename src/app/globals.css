@@ -10,10 +10,11 @@
   --color-leaf-50: #e8f0ea;
   --color-leaf-100: #d0e2d5;
   --color-leaf-300: #7bb58a;
-  --color-leaf-400: #4f9e5f;
+  --color-leaf-400: #4fae78; /* 진곤색 배경 위 강조용 — #145A32와 같은 색 계열의 밝은 톤 */
   --color-leaf-500: #1a7a3c;
   --color-leaf-600: #0f6b3a; /* 포인트 컬러 */
-  --color-leaf-700: #145a32; /* 서브 컬러 */
+  --color-leaf-700: #145a32; /* 서브 컬러 · 초록 강조 기준색 */
+  --color-leaf-800: #0f4526;
   /* 고급스러운 포인트 */
   --color-ivory: #f6f4ec;
   --color-sand: #e7dfc9;
@@ -60,7 +61,7 @@ body {
 
 /* 초록 → 연두 → 샴페인 골드 그라데이션 글자 */
 .text-gradient {
-  background: linear-gradient(120deg, #3fb553 0%, #9ccf8a 45%, #e9dcb5 100%);
+  background: linear-gradient(120deg, #4fae78 0%, #a3d6b6 45%, #e9dcb5 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

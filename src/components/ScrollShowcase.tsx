@@ -86,7 +86,7 @@ export default function ScrollShowcase() {
         </div>
 
         <div className="absolute inset-x-0 bottom-0 h-0.5 bg-white/10">
-          <div className="h-full bg-gradient-to-r from-leaf-500 to-gold" style={{ width: `${progress * 100}%` }} />
+          <div className="h-full bg-gradient-to-r from-leaf-400 to-gold" style={{ width: `${progress * 100}%` }} />
         </div>
       </div>
     </div>
