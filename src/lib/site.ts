@@ -13,8 +13,8 @@ export const site = {
     note: "에듀하임 1309오피스텔 내 상가",
   },
   links: {
-    // TODO: 실제 카카오톡 오픈채팅(상담) 링크로 교체
-    kakaoChat: "https://open.kakao.com/o/",
+    // 카카오톡 채널 "라움도배" 1:1 채팅
+    kakaoChat: "https://pf.kakao.com/_xbgVFX/chat",
     blog: "https://blog.naver.com/raum-dobae-kr",
   },
 } as const;
